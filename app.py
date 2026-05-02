@@ -33,15 +33,6 @@ if st.button("Phân tích ngay"):
         model = RandomForestClassifier(n_estimators=200, max_depth=10, random_state=42)
         model.fit(X[:split], y[:split])
         
-        # 1. Dự đoán thử trên tập dữ liệu kiểm tra (20% dữ liệu mà AI chưa từng thấy)
-        y_pred_test = model.predict(X_test)
-
-        # 2. So sánh kết quả dự đoán với thực tế để ra con số (từ 0 đến 1)
-        acc_score = accuracy_score(y_test, y_pred_test)
-  
-        # 3. Đổi ra phần trăm để hiển thị
-        accuracy_percent = acc_score * 100
-        
         # Tính tỷ lệ đúng thực tế
         acc = model.score(X[split:], y[split:]) * 100
         
