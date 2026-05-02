@@ -95,7 +95,7 @@ data_lq = {
     "Slimz": [["Joker", "Valhein"], ["Zuka", "Ngộ Không"], "Né mũi lao cơ khí của Slimz.", "51.5%"],
     "Stuart": [["Elsu", "Joker"], ["Ngộ Không", "Zuka"], "Đợi hắn hết chiêu 2 miễn thương rồi mới đánh.", "52.6%"],
     "Superman": [["Omen", "Arum"], ["Aleister", "Alice"], "Dùng khống chế hoặc làm chậm để ngắt phi hành.", "50.3%"],
-    "Edras": ["Dữ liệu đang cập nhật"]
+    "Edras": ["Dữ liệu đang cập nhật"],
     "Tachi": [["Omen", "Hayate"], ["Arum", "Aleister"], "Đừng để Tachi tích đủ nội tại sát thương chuẩn.", "49.8%"],
     "Taara": [["Hayate", "Maloch"], ["Max", "Mganga"], "Bắt buộc phải có giảm hồi máu.", "47.5%"],
     "Teeri": [["Joker", "Elsu"], ["Wukong", "Zuka"], "Áp sát nhanh không để Teeri bắn lan.", "51.9%"],
