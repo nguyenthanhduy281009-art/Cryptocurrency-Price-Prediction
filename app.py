@@ -155,4 +155,7 @@ if tuong_selected:
     st.warning(f"📝 **Mẹo đối đầu:** {res[2]}")
 
 st.divider()
+st.caption("Power By NGUYEN THANH DUY")
 st.caption("Dữ liệu được cập nhật dựa trên Meta 2026. Chúc bạn leo rank thành công!")
+
+
