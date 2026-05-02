@@ -40,8 +40,8 @@ data_lq = {
     "Enzo": [["Chaugnar", "Lữ Bố"], ["Arum", "Aleister"], "Tránh để Enzo móc trúng chiêu 2.", "49.2%"],
     "Eland'orr": [["Valhein", "Joker"], ["Zuka", "Ngộ Không"], "Khống chế cứng khi hắn biến về vị trí lồng đèn.", "50.7%"],
     "Fennik": [["Joker", "Elsu"], ["Nakroth", "Kriknak"], "Giữ khoảng cách tránh bị nổ dấu ấn chiêu 1.", "48.4%"],
-    "Flowborn(pháp sư)": [["d",]
-    "Flowborn(xạ thủ)": [["d",]
+    "Flowborn(pháp sư)": ["Dữ liệu đang cập nhật"]
+    "Flowborn(xạ thủ)": ["Dữ liệu đang cập nhật"]
     "Florentino": [["Omen", "Richter"], ["Arum", "Aleister"], "Cấm hoặc dùng khống chế chỉ định.", "54.2%"],
     "Goverra": ["Dữ liệu đang cập nhật"]
     "Gildur": [["Chaugnar", "Liliana"], ["Nakroth", "Zuka"], "Lên giày kiên cường và né các cú bắn vàng.", "50.1%"],
