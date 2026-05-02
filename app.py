@@ -2,7 +2,7 @@ import streamlit as st
 
 st.set_page_config(page_title="Liên Quân Counter-Pick", page_icon="⚔️", layout="wide")
 
-st.title("⚔️ Siêu Tool Khắc Chế Toàn Bộ  Vị Tướng")
+st.title("⚔️ Siêu Tool Khắc Chế Toàn Bộ Vị Tướng")
 
 # Dữ liệu 128 vị tướng (Duy có thể cập nhật thêm mẹo chi tiết cho từng con)
 # Cấu trúc: "Tên": [Khắc chế cùng đường, Khắc chế đường khác, Mẹo, Winrate]
@@ -153,9 +153,19 @@ if tuong_selected:
             st.write(f"- {t}")
             
     st.warning(f"📝 **Mẹo đối đầu:** {res[2]}")
-
+    # --- PHẦN CHÂN TRANG SIÊU NỔI BẬT ---
 st.divider()
-st.caption("Power By NGUYEN THANH DUY")
-st.caption("Dữ liệu được cập nhật dựa trên Meta 2026. Chúc bạn leo rank thành công!")
+
+# Dòng tên thương hiệu với màu sắc và kích thước lớn
+st.markdown(
+    """
+    <div style="text-align: center; padding: 20px; border-radius: 10px; background-color: #1E1E1E; border: 2px solid #FF4B4B;">
+        <h2 style="color: #FF4B4B; margin: 0;">🚀 Powered By</h2>
+        <h1 style="color: #FFFFFF; margin: 0; font-size: 40px; text-shadow: 2px 2px #FF4B4B;">NGUYEN THANH DUY</h1>
+        <p style="color: #AAAAAA; margin-top: 10px;">📅 Dữ liệu được cập nhật dựa trên Meta 2026. Chúc bạn leo rank thành công!</p>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 
 
