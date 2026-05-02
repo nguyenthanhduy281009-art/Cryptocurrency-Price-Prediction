@@ -1,47 +1,57 @@
 import streamlit as st
-import yfinance as yf
-import pandas as pd
-import numpy as np
-from sklearn.ensemble import RandomForestClassifier
 
-st.title("🤖 AI Dự Đoán Giá BNB")
+st.set_page_config(page_title="Liên Quân Counter-Pick AI", page_icon="⚔️")
+st.title("⚔️ AI Draft Pick: Khắc Chế & Tỷ Lệ Thắng")
 
-# Nhập dữ liệu từ người dùng
-t_time = st.number_input("Bạn muốn dự đoán sau bao nhiêu phút?", min_value=1, value=5)
-user_price = st.number_input("Nhập giá BNB hiện tại (USD):", min_value=0.0)
+# Dữ liệu mẫu (Bạn có thể tiếp tục thêm đầy đủ các tướng vào đây)
+# Format: "Tên Tướng": [Khắc chế cùng đường, Khắc chế đường khác, Mẹo, Winrate]
+data_lien_quan = {
+    "Airi": [["Yena", "Richter", "Florentino"], ["Arum", "Aleister"], "Chờ Airi hết lướt mới tung chiêu khống chế.", "49.5%"],
+    "Aleister": [["Zata", "Liliana", "Raz"], ["Ngộ Không", "Nakroth"], "Áp sát nhanh trước khi hắn kịp đặt ma trận.", "51.2%"],
+    "Arum": [["Hayate", "Maloch", "Elsu"], ["Paine", "Kriknak"], "Giữ khoảng cách, cấu rỉa từ xa thay vì áp sát.", "52.0%"],
+    "Elsu": [["Max", "Joker", "Violet"], ["Ngộ Không", "Quillen"], "Dùng các tướng áp sát nhanh hoặc lộ diện tàng hình.", "50.8%"],
+    "Florentino": [["Omen", "Richter", "Yena"], ["Arum", "Aleister"], "Hạn chế solo 1vs1, ưu tiên khống chế cứng.", "53.4%"],
+    "Grakk": [["Chaugnar", "Toro", "Maloch"], ["Hayate", "Violet"], "Đứng sau lính và dùng tướng có giải khống chế.", "48.9%"],
+    "Hayate": [["Valhein", "Joker", "Elsu"], ["Zuka", "Ngộ Không"], "Dùng tướng có sát thương dồn nhanh (Burst Damage).", "51.5%"],
+    "Nakroth": [["Zephys", "Wonder Woman"], ["Arum", "Aleister"], "Pick tướng chịu đòn tốt hoặc khống chế chỉ định.", "50.2%"],
+    "Ngộ Không": [["Max", "Lindis", "Elsu"], ["Baldum", "Thane"], "Sử dụng các tướng có khả năng soi map/tàng hình.", "52.1%"],
+    "Raz": [["Lauriel", "Liliana"], ["TeeMee", "Gildur"], "Tránh đứng thẳng hàng với cú đấm chân không.", "50.6%"],
+    "Tulane": [["Liliana", "Zata"], ["Nakroth", "Kriknak"], "Lên trang bị kháng phép sớm để giảm sát thương.", "51.0%"],
+    "Zill": [["Keera", "Lữ Bố"], ["Arum", "Aleister"], "Dùng tướng có khả năng không thể bị chọn làm mục tiêu.", "49.8%"],
+    "Zuka": [["Omen", "Skud", "Maloch"], ["Arum", "Aleister"], "Đợi Zuka dồn hết combo rồi mới phản công.", "52.7%"],
+}
 
-if st.button("Phân tích ngay"):
-    with st.spinner('Đang học dữ liệu thị trường...'):
-        # Lấy dữ liệu 7 ngày gần nhất, khung 1 phút
-        data = yf.download("BNB-USD", period="7d", interval="1m")
-        df = data[['Close']].copy()
-        
-        # TẠO CHIẾN THUẬT TĂNG TỶ LỆ ĐÚNG: Thêm các chỉ báo kỹ thuật
-        df['MA5'] = df['Close'].rolling(5).mean()
-        df['MA20'] = df['Close'].rolling(20).mean()
-        df['Volatility'] = df['Close'].diff()
-        
-        # Gán nhãn: 1 là Tăng, 0 là Giảm sau t_time
-        df['Target'] = (df['Close'].shift(-t_time) > df['Close']).astype(int)
-        df.dropna(inplace=True)
+# --- GIAO DIỆN ---
+st.info("💡 Mẹo: Bạn chỉ cần gõ chữ cái đầu (ví dụ: 'Z'), app sẽ hiện ra Zuka, Zill...")
 
-        # Huấn luyện AI
-        X = df[['Close', 'MA5', 'MA20', 'Volatility']]
-        y = df['Target']
-        
-        split = int(len(df) * 0.8)
-        model = RandomForestClassifier(n_estimators=200, max_depth=10, random_state=42)
-        model.fit(X[:split], y[:split])
-        
-        # Tính tỷ lệ đúng thực tế
-        acc = model.score(X[split:], y[split:]) * 100
-        
-        # Dự đoán ván hiện tại
-        current_val = np.array([[user_price if user_price > 0 else df['Close'].iloc[-1], 
-                                 df['MA5'].iloc[-1], df['MA20'].iloc[-1], df['Volatility'].iloc[-1]]])
-        pred = model.predict(current_val)
+# Thanh tìm kiếm có gợi ý (selectbox tự động lọc khi gõ)
+tuong_selected = st.selectbox(
+    "Nhập tên tướng địch để phân tích:",
+    options=[""] + sorted(list(data_lien_quan.keys())),
+    format_func=lambda x: "Chọn tướng..." if x == "" else x
+)
 
-        # Hiển thị kết quả
-        st.success(f"Tỷ lệ đúng của mô hình trong 7 ngày qua: {acc:.2f}%")
-        result = "TĂNG 📈" if pred[0] == 1 else "GIẢM 📉"
-        st.header(f"Dự đoán sau {t_time} phút: {result}")
+if tuong_selected:
+    res = data_lien_quan[tuong_selected]
+    
+    # Hiển thị Tỷ lệ thắng của tướng địch
+    st.subheader(f"📊 Phân tích: {tuong_selected}")
+    st.write(f"**Tỷ lệ thắng hiện tại của {tuong_selected}:** `{res[3]}`")
+    
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        st.success("**🛡️ Khắc chế cùng đường (Lane):**")
+        for t in res[0]:
+            st.write(f"- {t}")
+            
+    with col2:
+        st.info("**🎯 Khắc chế từ vị trí khác:**")
+        for t in res[1]:
+            st.write(f"- {t}")
+            
+    st.warning(f"📝 **Mẹo đối đầu:** {res[2]}")
+    
+    # Gợi ý thêm tỷ lệ thắng nếu bạn pick khắc chế
+    st.divider()
+    st.caption(f"Nếu bạn chọn các tướng gợi ý trên, tỷ lệ thắng của Team có thể tăng thêm 5-10%.")
