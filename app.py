@@ -23,7 +23,7 @@ data_lq = {
     "Baldum": [["Chaugnar", "Hayate"], ["Elsu", "Slimz"], "Cẩn thận bị Baldum úp lồng trong giao tranh.", "50.4%"],
     "Batman": [["Lindis", "Max"], ["Baldum", "Thane"], "Dùng đồ phụ trợ soi tàng hình sớm.", "51.5%"],
     "Bijan": [["Omen", "Toro"], ["Hayate", "Aleister"], "Khống chế cứng để chặn xe của Bijan.", "52.2%"],
-    "Bolt Baron": ["Dữ liệu đang cập nhật"]
+    "Bolt Baron": ["Dữ liệu đang cập nhật"],
     "Bright": [["Omen", "Arum"], ["Aleister", "Zata"], "Đợi Bright hết trạng thái bất tử rồi mới dồn dame.", "50.8%"],
     "Capheny": [["Joker", "Elsu"], ["Wukong", "Zuka"], "Dùng sát thương dồn nhanh trước khi cô ấy kịp bắn.", "51.1%"],
     "Chaugnar": [["Maloch", "Hayate"], ["Baldum", "Thane"], "Chaugnar hóa giải khống chế rất tốt, đừng dồn CC.", "48.7%"],
