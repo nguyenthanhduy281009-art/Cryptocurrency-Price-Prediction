@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.set_page_config(page_title="Liên Quân Counter-Pick Full 128", page_icon="⚔️", layout="wide")
+st.set_page_config(page_title="Liên Quân Counter-Pick", page_icon="⚔️", layout="wide")
 
 st.title("⚔️ Siêu Tool Khắc Chế: Toàn Bộ 128 Vị Tướng")
 
@@ -24,14 +24,14 @@ data_lq = {
     "Batman": [["Lindis", "Max"], ["Baldum", "Thane"], "Dùng đồ phụ trợ soi tàng hình sớm.", "51.5%"],
     "Bijan": [["Omen", "Toro"], ["Hayate", "Aleister"], "Khống chế cứng để chặn xe của Bijan.", "52.2%"],
     "Bright": [["Omen", "Arum"], ["Aleister", "Zata"], "Đợi Bright hết trạng thái bất tử rồi mới dồn dame.", "50.8%"],
-    "Brunhilda": [["D'Arcy", "Gildur"], ["Ngộ Không", "Paine"], "Áp sát nhanh khi cô ấy đang dựng pháo.", "49.9%"],
     "Capheny": [["Joker", "Elsu"], ["Wukong", "Zuka"], "Dùng sát thương dồn nhanh trước khi cô ấy kịp bắn.", "51.1%"],
     "Chaugnar": [["Maloch", "Hayate"], ["Baldum", "Thane"], "Chaugnar hóa giải khống chế rất tốt, đừng dồn CC.", "48.7%"],
+    "Celica": [["D'Arcy", "Gildur"], ["Ngộ Không", "Paine"], "Áp sát nhanh khi cô ấy đang dựng pháo.", "49.9%"],
     "Cresht": [["Hayate", "Maloch"], ["Elsu", "Slimz"], "Đừng đánh khi Cresht đang ở dạng Thủy quái.", "49.1%"],
     "D'Arcy": [["Chaugnar", "Liliana"], ["Nakroth", "Aoi"], "Lên giải khống chế để thoát khỏi vòng lập phương.", "50.3%"],
     "Dextra": [["Omen", "Arum"], ["Aleister", "Hayate"], "Đừng đánh khi Dextra đang bật chiêu cuối hồi máu.", "48.6%"],
     "Dirak": [["Liliana", "Raz"], ["Nakroth", "Quillen"], "Áp sát từ phía sau hoặc hai bên sườn.", "51.4%"],
-    "Diao Chan": [["Chaugnar", "Liliana"], ["Nakroth", "Zuka"], "Lên giày kiên cường để giảm thời gian đóng băng.", "47.9%"],
+    "Dieu Thuyen": [["Chaugnar", "Liliana"], ["Nakroth", "Zuka"], "Lên giày kiên cường để giảm thời gian đóng băng.", "47.9%"],
     "Elsu": [["Max", "Joker"], ["Ngộ Không", "Quillen"], "Dùng tướng áp sát nhanh hoặc tàng hình.", "52.5%"],
     "Enzo": [["Chaugnar", "Lữ Bố"], ["Arum", "Aleister"], "Tránh để Enzo móc trúng chiêu 2.", "49.2%"],
     "Eland'orr": [["Valhein", "Joker"], ["Zuka", "Ngộ Không"], "Khống chế cứng khi hắn biến về vị trí lồng đèn.", "50.7%"],
@@ -44,8 +44,7 @@ data_lq = {
     "Ignis": [["Tulen", "Liliana"], ["Nakroth", "Quillen"], "Né các vùng lửa để không bị choáng liên tục.", "49.5%"],
     "Illumia": [["Liliana", "Tulen"], ["Ngộ Không", "Paine"], "Cẩn thận bị đẩy lùi và choáng từ xa.", "50.2%"],
     "Ishar": [["Liliana", "Raz"], ["Nakroth", "Kriknak"], "Hạ gục thú cưng Tí Nị trước khi bắt Ishar.", "48.7%"],
-    "Jin": [["Liliana", "Tulen"], ["Zuka", "Nakroth"], "Tránh đứng gần khi hắn bật chiêu cuối.", "50.4%"],
-    "Joker": [["Elsu", "Violet"], ["Ngộ Không", "Paine"], "Dùng sát thương phép để xuyên lớp miễn thương vật lý.", "51.3%"],
+    "Jinna": [["Liliana", "Tulen"], ["Zuka", "Nakroth"], "Tránh đứng gần khi hắn bật chiêu cuối.", "50.4%"],
     "Kahlii": [["Liliana", "Tulen"], ["Nakroth", "Quillen"], "Né đường đạn từ chiêu cuối của cô ấy.", "49.8%"],
     "Keera": [["Zill", "Lữ Bố"], ["Arum", "Aleister"], "Cẩn thận bụi rậm, Keera dồn dame rất nhanh.", "51.7%"],
     "Kil'Groth": [["Omen", "Hayate"], ["Arum", "Aleister"], "Khống chế cứng khi hắn hết chiêu cuối.", "48.1%"],
