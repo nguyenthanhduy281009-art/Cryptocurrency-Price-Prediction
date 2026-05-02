@@ -120,7 +120,7 @@ data_lq = {
     "Zata": [["Aleister", "Arum"], ["Hayate", "Valhein"], "Dùng Quả cầu băng sương khi Zata bay lên.", "52.8%"],
     "Zephys": [["Lữ Bố", "Omen"], ["Arum", "Aleister"], "Càng thấp máu Zephys càng trâu, hãy dồn dame nhanh.", "49.9%"],
     "Zill": [["Keera", "Lữ Bố"], ["Arum", "Aleister"], "Dùng tướng có khả năng không thể bị chọn.", "49.0%"],
-    "Zipt": [["Chaugnar", "Gildur"], ["Hayate", "Slimz"], "Cẩn thận Zipt hút đồng đội thoát thân.", "51.6%"],
+    "Zip": [["Chaugnar", "Gildur"], ["Hayate", "Slimz"], "Cẩn thận Zipt hút đồng đội thoát thân.", "51.6%"],
     "Zuka": [["Skud", "Roxie"], ["Arum", "Aleister"], "Đừng đứng tụ lại để Zuka giẫm trúng nhiều người.", "53.5%"],
 }
 
