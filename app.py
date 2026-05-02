@@ -2,7 +2,7 @@ import streamlit as st
 
 st.set_page_config(page_title="Liên Quân Counter-Pick", page_icon="⚔️", layout="wide")
 
-st.title("⚔️ Siêu Tool Khắc Chế Toàn Bộ Vị Tướng")
+st.title("⚔️ Khắc Chế Toàn Bộ Vị Tướng")
 
 # Dữ liệu 128 vị tướng (Duy có thể cập nhật thêm mẹo chi tiết cho từng con)
 # Cấu trúc: "Tên": [Khắc chế cùng đường, Khắc chế đường khác, Mẹo, Winrate]
@@ -35,10 +35,10 @@ data_lq = {
     "Dolia": ["Dữ liệu đang cập nhật"],
     "Dieu Thuyen": [["Chaugnar", "Liliana"], ["Nakroth", "Zuka"], "Lên giày kiên cường để giảm thời gian đóng băng.", "47.9%"],
     "Dyadia": ["Dữ liệu đang cập nhật"],
-    "Elsu": [["Max", "Joker"], ["Ngộ Không", "Quillen"], "Dùng tướng áp sát nhanh hoặc tàng hình.", "52.5%"],
+    "Elsu": [["Max", "Stuart"], ["Ngộ Không", "Quillen"], "Dùng tướng áp sát nhanh hoặc tàng hình.", "52.5%"],
     "Enzo": [["Chaugnar", "Lữ Bố"], ["Arum", "Aleister"], "Tránh để Enzo móc trúng chiêu 2.", "49.2%"],
     "Eland'orr": [["Valhein", "Joker"], ["Zuka", "Ngộ Không"], "Khống chế cứng khi hắn biến về vị trí lồng đèn.", "50.7%"],
-    "Fennik": [["Joker", "Elsu"], ["Nakroth", "Kriknak"], "Giữ khoảng cách tránh bị nổ dấu ấn chiêu 1.", "48.4%"],
+    "Fennik": [["Stuart", "Elsu"], ["Nakroth", "Kriknak"], "Giữ khoảng cách tránh bị nổ dấu ấn chiêu 1.", "48.4%"],
     "Flowborn(pháp sư)": ["Dữ liệu đang cập nhật"],
     "Flowborn(xạ thủ)": ["Dữ liệu đang cập nhật"],
     "Florentino": [["Omen", "Richter"], ["Arum", "Aleister"], "Cấm hoặc dùng khống chế chỉ định.", "54.2%"],
@@ -77,7 +77,6 @@ data_lq = {
     "Nakroth": [["Zephys", "Rourke"], ["Arum", "Aleister"], "Dùng khống chế chỉ định không thể né.", "52.1%"],
     "Natalya": [["Liliana", "Raz"], ["Nakroth", "Ngộ Không"], "Né tia sáng của cô ấy và áp sát từ phía sau.", "47.6%"],
     "Ngộ Không": [["Max", "Lindis"], ["Baldum", "Thane"], "Sử dụng phụ trợ soi tàng hình sớm.", "53.2%"],
-    "Nishin": [["Hayate", "Omen"], ["Arum", "Aleister"], "Tướng mới, cần khống chế cứng để bắt.", "50.0%"],
     "Omega": [["Hayate", "Maloch"], ["Baldum", "Thane"], "Cẩn thận khả năng đẩy trụ nhanh của hắn.", "48.9%"],
     "Omen": [["Richter", "Florentino"], ["Hayate", "Slimz"], "Cẩn thận bị xích vào cột và bị thả diều.", "51.3%"],
     "Ormarr": [["Hayate", "Maloch"], ["Thane", "Baldum"], "Lên giày kiên cường để giảm thời gian bị choáng.", "47.7%"],
@@ -86,7 +85,6 @@ data_lq = {
     "Quillen": [["Lindis", "Max"], ["Arum", "Aleister"], "Luôn quay mặt về phía Quillen để giảm sát thương.", "51.6%"],
     "Raz": [["Lauriel", "Liliana"], ["TeeMee", "Gildur"], "Tránh đứng thẳng hàng với cú đấm.", "52.0%"],
     "Richter": [["Florentino", "Omen"], ["Arum", "Aleister"], "Cẩn thận Richter núp bụi dồn dame.", "51.9%"],
-    "Riktor": [["Florentino", "Omen"], ["Arum", "Aleister"], "Tương tự Richter, cẩn thận bụi cỏ.", "50.5%"],
     "Roxie": [["Hayate", "Maloch"], ["Elsu", "Slimz"], "Đừng đuổi theo Roxie khi cô ấy đang bật lửa.", "49.4%"],
     "Rourke": [["Hayate", "Omen"], ["Arum", "Aleister"], "Phá lớp giáp ảo của Rourke trước khi dồn dame.", "48.8%"],
     "Ryoma": [["Florentino", "Richter"], ["Zuka", "Ngộ Không"], "Áp sát nhanh vì Ryoma mạnh ở tầm trung.", "50.2%"],
@@ -106,6 +104,7 @@ data_lq = {
     "Thorne": [["Joker", "Elsu"], ["Ngộ Không", "Paine"], "Ép sớm không cho Thorne đủ 3 viên đạn tím.", "52.3%"],
     "Toro": [["Hayate", "Maloch"], ["Slimz", "Elsu"], "Đừng dồn khống chế vào Toro khi hắn đang gồng chiêu.", "48.6%"],
     "Tulen": [["Liliana", "Zata"], ["Nakroth", "Quillen"], "Lên trang bị kháng phép sớm.", "51.5%"],
+    "Trieu Van": [],
     "Valhein": [["Joker", "Elsu"], ["Zuka", "Ngộ Không"], "Lên giày kiên cường để giảm choáng.", "50.8%"],
     "Veera": [["Liliana", "Raz"], ["Nakroth", "Zuka"], "Lên Huân chương Troy sớm để không bị sốc dame.", "49.3%"],
     "Veres": [["Omen", "Hayate"], ["Arum", "Aleister"], "Né vòng quay của Veres để cô ấy không hồi máu.", "51.7%"],
